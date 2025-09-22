@@ -8,7 +8,11 @@ const authRoutes = require('./routes/auth');
 const app = express();
 
 // Middleware
-app.use(cors());
+// Middleware
+app.use(cors({
+  origin: ['http://localhost:4200', 'https://vercel-phi-coral.vercel.app'], // Remplacez par votre URL Vercel
+  credentials: true
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
